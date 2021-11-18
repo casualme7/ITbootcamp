@@ -1,0 +1,17 @@
+h3 {
+    color: green;
+    text-decoration: line-through;
+}
+
+p {
+    color: rgb(161, 161, 10);
+}
+
+#prviP {
+    color: violet;
+    text-align: right;
+}
+
+.zutaPozadina {
+    background-color: yellow;
+}

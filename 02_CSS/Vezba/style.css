@@ -1,0 +1,51 @@
+h1 {
+    color: maroon;
+}
+
+h2 {
+    color: red;
+}
+
+p {
+    color: purple;
+}
+
+img {
+    height: 300px;
+    width: 400px;
+    margin-top: 20px;
+    border: 2px dotted black;
+}
+
+a {
+    color: orange;
+}
+
+a:hover {
+    color: yellow;
+}
+
+/* a:visited {
+    color: green;
+} */
+
+
+body {
+    background-color: #cc7722;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.second {
+    text-align: center;
+}
+
+.paragrafX {
+    text-align: right;
+    font-size: 24px;
+}
+
+.treci {
+    text-align: center;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;;
+}

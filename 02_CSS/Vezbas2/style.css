@@ -1,0 +1,37 @@
+* {
+    font-family: 'Road Rage', cursive;
+}
+
+body {
+    background-color: #2a9d8f;
+}
+
+h1 {
+    color: #264653;
+}
+
+img {
+    width: 400px;
+    border: 4px double blue;
+}
+
+p {
+    width: 400px;
+}
+
+.paragrafx {
+    color: #e9c46a;
+    font-size: 25px;
+}
+
+a {
+    color: red;
+}
+
+a:hover {
+    color: green;
+}
+
+#p2 {
+    color: blue;
+}

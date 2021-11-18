@@ -1,0 +1,218 @@
+* {
+    font-family: 'Comic Neue', cursive; 
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-image: url(Pictures/galaxy2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 1050px;
+    margin: 50px 0 50px 0;
+    transition: 1s;
+}
+
+#centered {
+    display: inline;
+    border: 5px solid black;
+    width: 600px;
+    min-width: 600px;
+    border-radius: 50px;
+    background-color: rgba(245, 245, 245, 0.555);
+}
+
+#centered h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+#centered h2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+#imageDiv {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 5px 5px 5px;
+}
+
+img {
+    width: 45%;
+    height: 150px;
+    border: 3px solid red;
+    border-radius: 20px;
+}
+
+#imageAndPar {
+    margin: 0 auto;
+    border: 4px solid black;
+    border-radius: 20px;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.521);
+}
+
+#parDiv {
+    width: 70%;
+    margin-bottom: 5px;
+    color: whitesmoke;
+}
+
+#redToggle {
+    transition: 400ms;
+}
+
+.red {
+    color: red;
+    text-shadow: 0 0 5px rgb(255, 208, 0), 0 0 10px rgb(252, 185, 0), 0 0 15px rgb(128, 0, 0), 0 0 20px #f06c00, 0 0 30px #f1e100, 0 0 40px #ff2018, 0 0 55px #ff3318, 0 0 75px #ff2718;
+}
+
+#span1 {
+    color: red;
+}
+
+#listDiv {
+    margin-top: 20px;
+    display:flex ;
+    justify-content: space-evenly;
+    border: 4px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    width: 90%;
+    background-color: rgba(0, 86, 245, 0.233);
+}
+
+ul li , ol li {
+    font-weight: bold;
+    font-size: 20px ;
+}
+
+hr {
+    width: 60%;
+}
+
+p {
+    margin: 0;
+}
+
+#linkSajt {
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+}
+
+#uradio {
+    font-weight: bold;
+    border: 4px solid rgb(251, 255, 0);
+    border-radius: 20px;
+    width: 90%;
+    background-color: rgba(0, 245, 33, 0.233);
+}
+
+#dugmence {
+	background-color:#44c767;
+	border-radius:28px;
+	border:3px solid #012405;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:10px 20px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#dugmence:hover {
+	background-color:#5cbf2a;
+    border-color: limegreen;
+    color: black
+}
+#dugmence:active {
+	position:relative;
+	top:1px;
+}
+
+#dugmence:disabled {
+    background-color:#869e8c;
+	border-radius:28px;
+	border:3px solid #000000;
+	display:inline-block;
+	cursor:not-allowed;
+	color:#000000;
+	font-family:Arial;
+	font-size:17px;
+	padding:10px 20px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+
+#prviParagraf, #drugiParagraf {
+    margin: 10px 0;
+}
+
+#infoText {
+    font-weight: bold;
+    margin:0px 0px 40px 35px;
+}
+
+.underlineText {
+    text-decoration: underline;
+    color: yellow;
+}
+
+.green {
+    color: limegreen;
+}
+
+#uradio {
+    padding-bottom: 10px;
+}
+
+#buttonDiv {
+    font-weight: bold;
+    margin:30px 0px 20px 35px;
+    display: flex;
+    align-items: center;
+}
+
+.buttonTop {
+    border-radius: 50px;
+    color: black;
+    width: 22px;
+    border: 2px solid rgb(0, 0, 0);
+    margin-left: 3px;
+    font-weight: bold;
+    background-color: whitesmoke;
+    transition: 1s;
+    transform: translateY(-1px)
+}
+
+.buttonTop:hover {
+    border-radius: 50px;
+    color: whitesmoke;
+    width: 22px;
+    border: 2px solid rgb(255, 255, 255);
+    margin-left: 3px;
+    font-weight: bold;
+    background-color: rgb(0, 0, 0);
+    transform: translate(2px,-1px);
+}
+
+.activeButton {
+    color: red;
+    background-color: rgb(85, 85, 85);
+}
