@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .yellow {
+            background-color: yellow;
+        }
+
+        #zadatak2 td,
+        #zadatak2z td {
+            padding-right: 50px;
+        }
+
+        #zadatak2 th,
+        #zadatak2z th {
+            text-align: left;
+        }
+
+        #zadatak2 tr:nth-child(odd) {
+            font-style: italic;
+        }
+
+        #zadatak2z tr:nth-child(even):hover {
+            background-color: yellow;
+        }
+
+        #zadatak2z tr:nth-child(3n) {
+            color: blue;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1" cellspacing="0" cellpadding="1" border-collapse>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+    <br>
+    <table border="1" cellspacing="0" cellpadding="1">
+        <tr>
+            <td colspan="3">1</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+    <br>
+    <table border="1" cellspacing="0" cellpadding="1">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td rowspan="3">3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+    </table>
+    <br>
+    <table border="1" cellspacing="" id="zadatak2">
+        <tr>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Email</th>
+            <th>Due</th>
+            <th>Web Site</th>
+        </tr>
+        <tr>
+            <td>Smith</td>
+            <td>John</td>
+            <td>jsmith@gmail.com</td>
+            <td>$50.00</td>
+            <td>http://www.jsmith.com</td>
+        </tr>
+        <tr class="yellow">
+            <td>Bach</td>
+            <td>Frank</td>
+            <td>fbach@yahoo.com</td>
+            <td>$50.00</td>
+            <td>http://www.frank.com</td>
+        </tr>
+        <tr>
+            <td>Doe</td>
+            <td>Jason</td>
+            <td>jdoe@hotmail.com</td>
+            <td>$100.00</td>
+            <td>http://www.jdoe.com</td>
+        </tr>
+        <tr>
+            <td>Conway</td>
+            <td>Tim</td>
+            <td>tconway@earthink.net</td>
+            <td>$50.00</td>
+            <td>http://www.timconway.com</td>
+        </tr>
+    </table>
+    <br>
+    <table border="1" id="zadatak2z">
+        <tr>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th class="yellow">Email</th>
+            <th>Due</th>
+            <th>Web Site</th>
+        </tr>
+        <tr>
+            <td>Smith</td>
+            <td>John</td>
+            <td class="yellow">jsmith@gmail.com</td>
+            <td>$50.00</td>
+            <td>http://www.jsmith.com</td>
+        </tr>
+        <tr id="yellow">
+            <td>Bach</td>
+            <td>Frank</td>
+            <td class="yellow">fbach@yahoo.com</td>
+            <td>$50.00</td>
+            <td>http://www.frank.com</td>
+        </tr>
+        <tr>
+            <td>Doe</td>
+            <td>Jason</td>
+            <td class="yellow">jdoe@hotmail.com</td>
+            <td>$100.00</td>
+            <td>http://www.jdoe.com</td>
+        </tr>
+        <tr>
+            <td>Conway</td>
+            <td>Tim</td>
+            <td class="yellow">tconway@earthink.net</td>
+            <td>$50.00</td>
+            <td>http://www.timconway.com</td>
+        </tr>
+    </table>
+</body>
+
+</html>
