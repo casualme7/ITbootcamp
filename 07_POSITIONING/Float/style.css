@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+body {
+    height: 200vh;
+}
+
 #parent {
     background-color: brown;
     overflow: hidden;
@@ -25,12 +29,19 @@
     float: left;
 }
 
+.topbar {
+    position: sticky;
+    top: 0;
+}
+
 .topbar div {
-     border: 1px solid white;
+    position: relative;
     float: left;
     width: 25%;
     background-color: rgb(78, 77, 77);
-    position: relative;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 10px;
 }
 
 .topbar div:hover {
@@ -38,10 +49,13 @@
 }
 
 div a {
-    display: flex;
+    position: absolute;
+    text-align: center;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     color: white;
-    padding: 10px ;
     font-weight: bold;
     text-decoration: none;
-    justify-content: center;
 }
