@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#parent {
+    background-color: brown;
+    overflow: hidden;
+    /* Kada se koristi float svosjtvo:
+    1) Deca koja se redjaju
+          float: (left ili right)
+    2) Roditelj unutar kojeg se radjaju
+          overflow: hidden; */
+}
+
+#parent p{
+    background-color: yellow;
+    width: 25%;
+    float: right;
+    /* FLOAT = REDJANJE JEDAN ZA DRUGIM */
+
+}
+
+#parent p:nth-child(1) {
+    float: left;
+}
+
+.topbar div {
+     border: 1px solid white;
+    float: left;
+    width: 25%;
+    background-color: rgb(78, 77, 77);
+    position: relative;
+}
+
+.topbar div:hover {
+    background-color: red;
+}
+
+div a {
+    display: flex;
+    color: white;
+    padding: 10px ;
+    font-weight: bold;
+    text-decoration: none;
+    justify-content: center;
+}
