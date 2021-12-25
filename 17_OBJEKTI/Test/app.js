@@ -68,6 +68,16 @@ let dan = {
         }
         return true;
     },
+    // Cisto primer, ista logika, ardi preko for let i petle a nece preko forEach
+    //
+    // tropskiDan() {
+    //     this.vrednostiTemperature.forEach(el => {
+    //         if (el < 24) {
+    //             return false;
+    //         }
+    //     })
+    //     return true;
+    // },
     nepovoljanDan() {
         let vrm = this.vrednostiTemperature;
         for (let i = 0; i < vrm.length; i++) {
