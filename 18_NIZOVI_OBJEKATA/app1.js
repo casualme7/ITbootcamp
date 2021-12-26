@@ -1,31 +1,31 @@
 let blog1 = {
     title: "Amadeus",
-    likes: 30,
+    likes: 50,
     dislakes: 9,
 };
 
 let blog2 = {
     title: "Lion King!",
-    likes: 40,
+    likes: 50,
     dislakes: 12
 };
 
 let blog3 = {
     title: "Parasite",
-    likes: 15,
+    likes: 61,
     dislakes: 39
 };
 
 let blog4 = {
     title: "Uvod u JS",
-    likes: 3144,
+    likes: 4,
     dislakes: 61
 };
 
 let blog5 = {
     title: "IF grananje",
-    likes: 124,
-    dislakes: 91
+    likes: 60,
+    dislakes: 4
 };
 
 let user = {
@@ -118,7 +118,7 @@ korisnikArr.forEach(el => {
 
 // ZADATAK 5:
 // spisati imena onih autora koji imaju ukupno 
-// više od 100 lajkova za blogove koje su napisali
+// više od 200 lajkova za blogove koje su napisali
 console.log("")
 console.log("------ ZADATAK 5 ------")
 
@@ -128,7 +128,7 @@ korisnikArr.forEach(el => {
         kolko += u.likes
     })
     if (kolko > 200) {
-        console.log(`Prvi nacin: `, el.username);
+        console.log(`Prvi nacin: `, el.username, ", Lajkova:", kolko);
     }
 })
 
@@ -140,6 +140,8 @@ korisnikArr.forEach(el => {
 })
 
 // ZADATAK 6:
+// Ispisati naslove onih 
+// blogova koji imaju natprosečan broj pozitivnih ocena
 console.log("")
 console.log("------ ZADATAK 6 ------")
 
@@ -157,9 +159,12 @@ console.log("Globalni prosek lajkova je:", globalAvgLikes(korisnikArr))
 let blogoviSaNatprosecnoLajkova = arr => {
     let gal = globalAvgLikes(arr);
     arr.forEach(el => {
+        console.log(`Username: `,el.username)
+        let brojac = 0;
         el.blogs.forEach(b => {
             if (b.likes > gal) {
-                console.log(b.title)
+                brojac++
+                console.log(brojac,b.title)
             }
         })
     })

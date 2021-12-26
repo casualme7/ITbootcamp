@@ -26,6 +26,7 @@ let dan = {
         return brojac
     },
     kolikoPutaMaximalnaTemperatura: function () {
+        // let max = Math.max(...this.vrednostiTemperature)
         let max = this.vrednostiTemperature[0];
         this.vrednostiTemperature.forEach(el => {
             if (el > max) {
@@ -68,16 +69,6 @@ let dan = {
         }
         return true;
     },
-    // Cisto primer, ista logika, ardi preko for let i petle a nece preko forEach
-    //
-    // tropskiDan() {
-    //     this.vrednostiTemperature.forEach(el => {
-    //         if (el < 24) {
-    //             return false;
-    //         }
-    //     })
-    //     return true;
-    // },
     nepovoljanDan() {
         let vrm = this.vrednostiTemperature;
         for (let i = 0; i < vrm.length; i++) {
@@ -105,9 +96,9 @@ let dan = {
 console.log("Izmerenih temp u toku dana:", dan.izmerenihTemperatura());
 console.log("Prosecna temperatura je:", dan.prosecnaTemperatura());
 console.log("Koliko puta je temperatura bila iznad proseka:", dan.nadprosecnaTemperatura());
-console.log("Koliko puta je temperatura bila maximalna dnevna temperatura: ", dan.kolikoPutaMaximalnaTemperatura());
-console.log("Koliko puta je temperatura bila izmedju navedenih temperatura: ", dan.temperaturaIzmedju(8, 13));
-console.log("Da li je temp u vecini dana bila iznad proseka? ", dan.vecinaDanaIznadProseka());
+console.log("Koliko puta je temperatura bila maximalna dnevna temperatura:", dan.kolikoPutaMaximalnaTemperatura());
+console.log(`Koliko puta je temperatura bila izmedju navedenih temperatura:`, dan.temperaturaIzmedju(8, 13));
+console.log("Da li je temp u vecini dana bila iznad proseka?", dan.vecinaDanaIznadProseka());
 console.log("Ladeni Dan? ", dan.ledeniDan());
 console.log("Tropski Dan? ", dan.tropskiDan());
 console.log("Nepovoljan Dan? ", dan.nepovoljanDan());
