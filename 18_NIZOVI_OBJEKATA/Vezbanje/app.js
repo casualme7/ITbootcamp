@@ -248,6 +248,23 @@ let prosecanStudent = arr => {
 };
 prosecanStudent(studenti);
 
+// let prosecan = (arr) => {
+//     let xxx = 0;
+//     arr.forEach(el => {
+//         let brojac = 0;
+//         el.ocene.forEach(ocene => {
+//             if (ocene == 10 || ocene == 6) {
+//                 brojac++;
+//             }
+//         })
+//         if (brojac == 0) {
+//             xxx++;
+//             console.log(xxx, el.ime, el.prezime);
+//         }
+//     })
+// };
+// prosecan(student);
+
 // Zadatak 6:
 // Student je “ekstra” ako je polagao ispite samo sa devetkama i desetkama,
 // i pri tome je broj desetki barem duplo veći od broja devetki.
@@ -726,6 +743,7 @@ let gradKida = (arr, grad) => {
     arr.forEach(el => {
         if (el.grad === grad) {
             kolkoKurseva++;
+            console.log(kolkoKurseva);
         }
     })
     arr.forEach(el => {
