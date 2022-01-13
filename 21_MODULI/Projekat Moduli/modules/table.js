@@ -1,4 +1,4 @@
-import { generateImage } from "./general.js";
+import generateImage from "./general.js";
 
 function generateTable(parent) {
     let newTable = document.createElement("table");
@@ -13,7 +13,7 @@ function generateTableRow(parent) {
     return newRow;
 }
 
-function generateTableItem(parent, src) {
+function generateItem(parent, src) {
     let newTableData = document.createElement("td");
     let img = generateImage(src);
     newTableData.appendChild(img);
@@ -21,4 +21,4 @@ function generateTableItem(parent, src) {
     return newTableData;
 }
 
-export { generateTable, generateTableRow, generateTableItem };
+export { generateTable, generateTableRow, generateItem };
