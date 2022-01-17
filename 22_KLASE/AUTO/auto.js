@@ -74,8 +74,6 @@ class Auto {
     }
 }
 
-export default Auto;
-
 // PRAKSA:
 // Jedino geteri i seteri pristupaju poljima
 // Ostale metode, kao i objekti van klase
@@ -101,3 +99,7 @@ dohvatiMarku() {
 }
 Moze obicne metode, ali vizuelni nije lepo
 */
+
+
+
+export { Auto }

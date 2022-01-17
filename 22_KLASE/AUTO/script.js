@@ -1,4 +1,4 @@
-import Auto from "./auto.js";
+import { Auto, Pacijent } from "./auto.js";
 
 let a1 = new Auto("Citroen C4", "crna", false);
 // Nakon ovoga, a1 je objekat koji ima sledeca polja:
