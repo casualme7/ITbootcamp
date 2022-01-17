@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>TO-DO-LISTA</title>
+</head>
+
+<body>
+
+    <form class="containter">
+        <h2>Moj podsetnik:</h2>
+        <ul class="ulSection">
+            <li>Plati racune</li>
+            <li>Pripremi predavanja</li>
+            <li>Odgovori na e-mail</li>
+        </ul>
+        <div class="container2">
+            <input type="text" class="unesiObavezu " placeholder="Unesite obavezu">
+            <div class="errorMsg"></div>
+            <button class="dodajButton">Dodaj</button>
+            <br>
+            <input type="radio" id="radio1" checked name="dugmiciR">
+            <label for="radio1">Dodaj na pocetak</label>
+            <br>
+            <input type="radio" id="radio2" name="dugmiciR">
+            <label for="radio2">Dodaj na kraj</label>
+        </div>
+    </form>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>

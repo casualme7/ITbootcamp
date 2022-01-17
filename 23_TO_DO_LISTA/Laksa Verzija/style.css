@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Dongle', sans-serif;
+}
+
+html {
+    font-size: 30px;
+}
+
+.containter {
+    margin-left: 20px;
+    width: 230px;
+}
+
+ul li {
+    list-style: none;
+    border: 3px solid rgb(2, 2, 148);
+    border-radius: 30px;
+    margin-bottom: 20px;
+    background-color: cadetblue;
+    color: whitesmoke;
+    padding: 2px 20px;
+}
+
+ul li:hover {
+    color:  rgb(34, 34, 34);
+    background-color: rgb(168, 195, 196);
+    border: 3px solid rgb(133, 133, 197);
+
+}

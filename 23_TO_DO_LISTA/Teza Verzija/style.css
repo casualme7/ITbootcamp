@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Dongle', sans-serif;
+    font-size: 30px;
+}
+
+.containter {
+    margin-left: 20px;
+    width: 230px;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+ul li {
+    list-style: none;
+    border: 3px solid rgb(2, 2, 148);
+    border-radius: 30px;
+    margin-bottom: 20px;
+    background-color: cadetblue;
+    color: whitesmoke;
+    padding: 2px 20px;
+}
+
+ul li:hover {
+    color:  rgb(34, 34, 34);
+    background-color: rgb(168, 195, 196);
+    border: 3px solid rgb(133, 133, 197);
+}
+
+.unesiObavezu {
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 30px;
+    margin-bottom: 10px;
+    background-color: rgb(189, 189, 189);
+    color: whitesmoke;
+    padding: 2px 20px;
+    width: 100%;
+}
+
+.dodajButton {
+    width: 100px;
+    text-align: center;
+    border:  5px solid lime;
+    color: lime;
+    background-color: green;
+    border-radius: 30px;
+}
+
+.dodajButton {
+    transition: 400ms;
+    /* display: none; */
+}
+
+.dodajButton:hover {
+    transform: scale(1.2);
+}
+
+.container2 {
+    text-align: center;
+}
