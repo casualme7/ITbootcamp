@@ -1,0 +1,30 @@
+[
+    {
+        "imePrezime": "Michael Jordan",
+        "visina": 199,
+        "timovi": [
+            "Lakers",
+            "Heats",
+            "Nets",
+            "Warriors"
+        ]
+    },
+    {
+        "imePrezime": "Lebron James",
+        "visina": 169,
+        "timovi": [
+            "Partizan",
+            "Crvena Zvezda"
+        ]
+    },
+    {
+        "imePrezime": "Miljan Pantovic",
+        "visina": 188,
+        "timovi": [
+            "Chicago",
+            "Crvena Zvesta",
+            "Bucks",
+            "Lakers"
+        ]
+    }
+]
