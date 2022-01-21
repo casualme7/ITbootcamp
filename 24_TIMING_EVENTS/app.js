@@ -18,7 +18,7 @@ setTimeout(() => {
 }, 1000 * 1);
 
 // arrow = Window element;
-// anonmna, ono sto poziva, u ovom slucaju dugme
+// anonmna, ono sto poziva, u ovom slucaju dugme, treba this
 
 let btn1 = document.querySelector(".btn1");
 let btn2 = document.querySelector(".btn2");
