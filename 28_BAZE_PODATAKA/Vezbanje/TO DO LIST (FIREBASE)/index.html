@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="Icon/cool.png">
+    <title>To do list:</title>
+</head>
+
+<body>
+    <h1>TO DO LIST (FIREBSE):</h1>
+    <section class="wholeDoc">
+        <div class="content"></div>
+        <form class="addMore" action="#">
+            <div class="centeredText">
+                <h3>Add your tasks:</h3>
+            </div>
+            <div class="addTasksContent">
+                <label for="textInput">Title: </label>
+                <input type="text" id="textInput" autocomplete="off" placeholder=" Enter title"> <br>
+                <label for="descriptionInput">Desc: </label>
+                <input type="text" id="descriptionInput" autocomplete="off" placeholder=" Enter the Description"> <br>
+                <label for="priorityInput">Priority: </label>
+                <input type="checkbox" id="priorityInput" autocomplete="off"> <br>
+            </div>
+            <div class="centeredText">
+                <input type="submit" value="SEND IT" id="sendItButton">
+            </div>
+        </form>
+    </section>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCwEoGevK7k01q8wgoDYlcMwjzvV-RwbYA",
+            authDomain: "myfirstproject-198bb.firebaseapp.com",
+            projectId: "myfirstproject-198bb",
+            storageBucket: "myfirstproject-198bb.appspot.com",
+            messagingSenderId: "411401980078",
+            appId: "1:411401980078:web:7b861a44206b7a107dc53f",
+            measurementId: "G-GJRZQRGH7J"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        let db = firebase.firestore();
+    </script>
+
+    <!-- <script src="app.js"></script> -->
+    <script src="app.js"></script>
+    <!-- <script src="app3.js"></script> -->
+</body>
+
+</html>
