@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            color: red;
+            width: 10px;
+            text-align: left;
+            border-radius: 10px;
+            border: 2px solid red;
+            background-color: rgb(65, 8, 8);
+            cursor: pointer;
+            padding-right: 13px;
+            margin-left: 10px;
+            transition: 300ms;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <ul></ul>
+    <form action="">
+        <label for="title">Title: </label>
+        <input type="text" name="title" id="title">
+        <br>
+        <label for="start_date">Start Date:</label>
+        <input type="datetime-local" name="start_date" id="start_date">
+        <br>
+        <label for="due_date">Due Date:</label>
+        <input type="datetime-local" name="due_date" id="due_date">
+        <br>
+        <label for="priority">Priority:</label>
+        <input type="checkbox" name="priority" id="priority">
+        <br>
+        <label for="description">Description:</label>
+        <textarea name="description" id="description"></textarea>
+        <br>
+        <input type="submit" value="Create New Task">
+
+    </form>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCwEoGevK7k01q8wgoDYlcMwjzvV-RwbYA",
+            authDomain: "myfirstproject-198bb.firebaseapp.com",
+            projectId: "myfirstproject-198bb",
+            storageBucket: "myfirstproject-198bb.appspot.com",
+            messagingSenderId: "411401980078",
+            appId: "1:411401980078:web:7b861a44206b7a107dc53f",
+            measurementId: "G-GJRZQRGH7J"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        let db = firebase.firestore();
+    </script>
+
+    <!-- <script src="app.js"></script> -->
+    <script src="script.js"></script>
+    <!-- <script src="app3.js"></script> -->
+</body>
+
+</html>

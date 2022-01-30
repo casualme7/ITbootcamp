@@ -155,4 +155,28 @@ db.collection("movies").doc("movie2").update({
     console.log("Changed director name of movie2");
 }).catch(err => {
     console.log("Error while changins director name property:", err);
+});
+
+// Drugi nacin za dodavanja dokumenta:
+
+db.collection("tasks").add({
+    title: "Vezba za projekat",
+    description: "Vezbanje JS",
+    start_date: firebase.firestore.Timestamp.fromDate(new Date("2022-01-29")),
+    due_date: null,
+    priority: true,
+}).then(() => {
+    console.log("Uspesno dodat zadatak u kolekciju Tasks");
+}).catch(err => {
+    console.log("Desila se greska:", err);
 })
+
+/*
+
+db.collection("...").add()   <==> db.collection("...").doc().set()
+    - Dodaje nov dokument sa random ID-em
+
+db.collection("...").doc(id).set(id)
+    Dodaje dokument sa ven unetim ID-jem
+
+*/
