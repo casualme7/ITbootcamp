@@ -48,7 +48,7 @@ addMore.addEventListener("submit", function (e) {
             sendItButton.value = "Successfully added!"
             adding.play();
             db.collection("tasks").add(obj).then(response => {
-                console.log("Object successfully added:", response);
+                console.log("Object successfully added:", response.id);
             }).catch(err => {
                 console.log("Object NOT added:", err);
             })
@@ -92,14 +92,13 @@ db.collection("tasks").onSnapshot(snapshot => {
             divForContent.classList.add("divForContent");
             content.appendChild(divForContent);
         } else if (el.type === "removed") {
-            let deletedDiv = document.querySelector(`#${el.doc.id}`);
+            let deletedDiv = document.getElementById(el.doc.id);
             deletedDiv.remove();
         }
     })
 });
 
 let wholeDoc = document.querySelector(".wholeDoc");
-let progress = false;
 
 wholeDoc.addEventListener("click", function (klik) {
     if (klik.target.tagName === "BUTTON") {
