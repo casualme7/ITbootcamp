@@ -16,5 +16,15 @@ export class Chatroom {
     get username() {
         return this._username;
     }
-
+    async addChat(text) {
+        let data = new Date();
+        let docChat = {
+            message: text,
+            username: this.username,
+            room: this.room,
+            created_at: firebase.firestore.Timestamp.fromDate(data)
+        }
+        let response = await this.chats.add(docChat);
+        return response;
+    }
 }
