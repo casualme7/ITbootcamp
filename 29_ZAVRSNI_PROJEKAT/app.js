@@ -9,8 +9,12 @@ console.log(chatroom1.username); // test setera za username
 chatroom1.room = "general";
 console.log(chatroom1.room); // test setera za username
 
-chatroom1.addChat("Prvi text dodat iz JS fajla").then(() => {
+chatroom1.addChat("Drugi text dodat iz JS fajla").then(() => {
     console.log("Chat added successfully!");
 }).catch(err => {
     console.log("ERROR:", err);
+});
+
+chatroom1.getChats(d => {
+    console.log(d);
 });

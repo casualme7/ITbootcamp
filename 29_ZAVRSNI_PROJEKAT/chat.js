@@ -11,7 +11,12 @@ export class Chatroom {
         return this._room;
     }
     set username(un) {
-        this._username = un;
+        let modifiedUn = un.trim();
+        if (modifiedUn.length >= 2 && modifiedUn.length <= 10) {
+            this._username = modifiedUn;
+        } else {
+            alert("Username is not valid! (2-10 characters please)")
+        }
     }
     get username() {
         return this._username;
@@ -26,5 +31,14 @@ export class Chatroom {
         }
         let response = await this.chats.add(docChat);
         return response;
+    }
+    getChats(callback) {
+        this.chats.where("room", "==", this.room).orderBy("created_at", "asc").onSnapshot(snapshot => {
+            snapshot.docChanges().forEach(change => {
+                if (change.type === "added") {
+                    callback(change.doc.data());
+                }
+            })
+        })
     }
 }
