@@ -1,4 +1,5 @@
 import { Chatroom } from "./chat.js";
+import { ChatUI } from './ui.js';
 
 let chatroom1 = new Chatroom("js", "Deda Mraz");
 console.log(chatroom1.room, chatroom1.username) // test getera
@@ -18,3 +19,7 @@ chatroom1.addChat("Drugi text dodat iz JS fajla").then(() => {
 chatroom1.getChats(d => {
     console.log(d);
 });
+
+let chatRoomText = document.querySelector(".chat_room_text");
+let chat1 = new ChatUI(chatRoomText);
+console.log(chat1);
