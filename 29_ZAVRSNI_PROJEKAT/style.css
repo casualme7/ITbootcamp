@@ -90,13 +90,14 @@ header h1 img {
     margin-bottom: 20px;
     box-shadow: 0px 0px 10px;
     background-color: rgba(255, 255, 255, 0.85);
+    overflow: scroll;
 }
 
 .chat_room_text img {
     position: absolute;
-    width: 250px;
-    bottom: -15px;
-    right: -40px;
+    width: 150px;
+    bottom: 0%;
+    right: 0%;
     opacity: 50%;
 }
 
@@ -139,6 +140,42 @@ input[type="text"]{
 .msg_input .send:hover,
 .username_input .update:hover {
     transform: scale(0.9);
+}
+
+.textBubble {
+    display: table;
+    margin: 15px;
+    padding: 7px 25px;
+    border-radius: 30px;
+    border-top-left-radius: 0px;
+    box-shadow: 0px 0px 5px 2px black, 0px 0px 10px 1px rgb(173, 0, 173);
+    background: radial-gradient(circle, 
+    rgba(0,69,255,0.15) 0%, 
+    rgba(187,0,241,0.15) 100%);
+    transition: 1s;
+}
+
+.textBubble:hover {
+    background: radial-gradient(circle, 
+    rgba(0,69,255,0.25) 0%, 
+    rgba(187,0,241,0.25) 100%);
+    box-shadow: 0px 0px 5px 2px black, 0px 0px 10px 1px rgb(28, 28, 163);
+}
+
+.spanBubble {
+    color: purple;
+}
+
+#changedUsername {
+    width: 350px;
+    height: 20px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+    color: rgb(0, 0, 0);
+    text-shadow: 0px 0px 10px rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 20px;
 }
 
 @media only screen and (max-width: 550px) {

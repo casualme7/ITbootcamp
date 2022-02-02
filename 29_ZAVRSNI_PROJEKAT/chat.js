@@ -41,4 +41,10 @@ export class Chatroom {
             })
         })
     }
+    updateUsername(newUser) {
+        this.username = newUser;
+    }
+    updateRoom(newRoom) {
+        this.room = newRoom;
+    }
 }
