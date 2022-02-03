@@ -45,4 +45,8 @@ export class ChatUI {
         newDiv.appendChild(newP2);
         this.element.appendChild(newDiv);
     }
+    delete() {
+        let pic = `<img src="Images/snowman1.png" alt="">`;
+        this.element.innerHTML = pic;
+    }
 }
