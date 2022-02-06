@@ -35,22 +35,36 @@
     <section class="chat_room_area">
         <div class="chat_room_text">
             <!-- OVDE CE SE NALAZITI PORUKE -->
-            <img src="Images/snowman1.png" alt="">
+            <img id="snowman" src="Images/snowman1.png" alt="">
         </div>
     </section>
 
     <!-- Sekcija sa 2 forme, u svakoj po text input i submit -->
     <section class="form_inputs">
+        <!-- Forma zaodredjivanje vremena poruka -->
+        <form action="#" class="date_input">
+            <input type="datetime-local" class="firstDate">
+            <input type="datetime-local" class="secondDate">
+            <input type="submit" value="Get Dates" class="getDates">
+        </form>
+        <!-- Forma sa unos zeljene poruke -->
         <form action="#" class="msg_input">
-            <input type="text" placeholder="Your message" class="yourMessage" autocomplete="on">
+            <textarea name="" class="yourMessage" cols="30" rows="10" placeholder="Your message"></textarea>
+            <!-- <input type="text" placeholder="Your message" class="yourMessage" autocomplete="on"> -->
             <input type="submit" value="Send" class="send">
         </form>
+        <!-- Forma za unos username-a koje zelimo da promenimo -->
         <form action="#" class="username_input">
             <input type="text" placeholder="Update your username" autocomplete="off">
             <input type="submit" value="Update" class="update">
+            <footer id="changedUsername"></footer>
+        </form>
+        <!-- Forma za color input change -->
+        <form action="#" class="color_input">
+            <input type="color" value="#FFFFFF" autocomplete="off">
+            <input type="submit" value="Color Change" class="colorB">
         </form>
     </section>
-    <footer id="changedUsername"></footer>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>

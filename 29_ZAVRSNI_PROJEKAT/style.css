@@ -12,12 +12,6 @@ body {
     background: url(Images/2.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    /* background-size: cover; */
-    /* background: linear-gradient(90deg, 
-    rgba(0,225,255,0.60) 0%, 
-    rgba(0,12,251,0.60) 25%, 
-    rgba(33,0,221,0.60) 65%, 
-    rgba(69,252,225,0.60) 100%); */
 }
 
 header {
@@ -92,26 +86,29 @@ header h1 img {
 }
 
 .chat_room_text {
+    display: block;
     position: relative;
     height: 400px;
     width: 95%;
     border-radius: 10px;
     margin-bottom: 20px;
-    box-shadow: 0px 0px 10px;
+    box-shadow: 0px 0px 15px 4px black;
     background-color: rgba(255, 255, 255, 0.85);
     overflow: scroll;
 }
 
-.chat_room_text img {
+.chat_room_text #snowman {
     position: absolute;
     width: 150px;
     bottom: 0%;
     right: 0%;
-    opacity: 50%;
+    z-index: -1;
 }
 
 .form_inputs {
     text-align: center;
+    display: table;
+    margin: 0 auto;
 }
 
 input {
@@ -120,6 +117,10 @@ input {
     border: 2px solid black;
     border-radius: 10px;
     box-shadow: 0px 0px 10px black;
+}
+
+input[type="datetime-local"] {
+    width: 125px;
 }
 
 input[type="submit"]{
@@ -131,12 +132,21 @@ input[type="text"]{
     background-color: rgb(230, 230, 230);
 }
 
-.msg_input {
-    margin-bottom: 10px;
+.yourMessage {
+    position: relative;
+    bottom: -12px;
+    width: 250px;
+    height: 34px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
 }
 
 .msg_input .send,
-.username_input .update {
+.username_input .update,
+.color_input .colorB,
+.date_input .getDates {
     background-color: #390ca3c2;
     color: rgb(253, 253, 253);
     font-weight: bold;
@@ -144,20 +154,60 @@ input[type="text"]{
     border-radius: 30px;
     text-shadow: 3px 3px 3px #000000;
     transition: 500ms;
+    margin-bottom: 15px;
+}
+
+/* Fix za textarea nije allined*/
+
+.date_input .getDates {
+    margin-bottom: 6px;
+}
+
+/* Fix za color  sto nije allined */
+.username_input .update {
+    margin-bottom: 11px;
+}
+
+.color_input input[type="color"] {
+    padding: 0px;
+    height: 34px;
+    position: relative;
+    top: 6px;
 }
 
 .msg_input .send:hover,
-.username_input .update:hover {
+.username_input .update:hover,
+.color_input .colorB:hover {
     transform: scale(0.9);
 }
 
+.username_input {
+position: relative;
+}
+
 .textBubble {
+    position: relative;
     display: table;
     margin: 15px;
-    padding: 7px 25px;
+    padding: 7px 50px 7px 25px;
     border-radius: 30px;
     border-top-left-radius: 0px;
-    box-shadow: 0px 0px 5px 2px black, 0px 0px 10px 1px rgb(173, 0, 173);
+    box-shadow: 0px 0px 4px rgb(173, 0, 173);
+    background: radial-gradient(circle, 
+    rgba(0,69,255,0.15) 0%, 
+    rgba(187,0,241,0.15) 100%);
+    transition: 500ms;
+}
+
+.textBubbleAway {
+    position: relative;
+    display: table;
+    margin: 15px;
+    margin-left: auto;
+    padding: 7px 50px 7px 25px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 4px rgb(0, 68, 255);
+    border-top-right-radius: 0px;
     background: radial-gradient(circle, 
     rgba(0,69,255,0.15) 0%, 
     rgba(187,0,241,0.15) 100%);
@@ -165,10 +215,26 @@ input[type="text"]{
 }
 
 .textBubble:hover {
-    background: radial-gradient(circle, 
-    rgba(0,69,255,0.25) 0%, 
-    rgba(187,0,241,0.25) 100%);
-    box-shadow: 0px 0px 5px 2px black, 0px 0px 10px 1px rgb(28, 28, 163);
+    box-shadow: 0px 0px 7px black;
+}
+
+.textBubbleAway:hover {
+    box-shadow: 0px 0px 7px black;
+}
+
+.binImg {
+    position: absolute;
+    width: 15px;
+    right: 20px;
+    bottom: 10px;
+    opacity: 0.5;
+    transition: 300ms;
+}
+
+.binImg:hover,
+.binImgAway:hover {
+    opacity: 1;
+    transform: scale(1.2);
 }
 
 .spanBubble {
@@ -176,37 +242,61 @@ input[type="text"]{
 }
 
 #changedUsername {
-    width: 350px;
-    height: 20px;
+    display:table;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
     margin: 0 auto;
     text-align: center;
     margin-top: 20px;
     color: rgb(0, 0, 0);
     text-shadow: 0px 0px 10px rgb(255, 255, 255);
-    font-weight: bold;
     font-size: 20px;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 30px;
+    border-bottom-right-radius: 0px;
+    padding: 5px 20px;
+    top: -100px;
+    right: 100px;
+    z-index: 1;
+    transition: 600ms;
 }
 
 @media only screen and (max-width: 550px) {
+    header {
+        margin: 30px auto;
+    }
     input[type="submit"]{
        margin-top: 10px;
     }
     .nav_bar_section ul {
        flex-wrap: wrap;
-       width: 150px;
-       margin: 0 auto 25px auto;
+       width: 350px;
+       margin: 0 auto 5px auto;
     }
     .nav_bar_section ul li {
-      width: 100%;
+      width: 45%;
       margin-bottom: 20px;
     }
     input {
         width: 200px;
+    }
+    .yourMessage {
+        width: 200px;
+    }
+    input[type="datetime-local"]{
+        width: 100px;
+        margin-top: 10px;
     }
     input[type="submit"]{
         width: 75px;
     }
     body {
         margin-bottom: 40px;
+    }
+    #changedUsername {
+        top: -90px;
+        right: 40px;
     }
 }

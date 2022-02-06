@@ -3,6 +3,7 @@ export class Chatroom {
         this.room = r;
         this.username = un;
         this.chats = db.collection("chats");
+        this.unsub = false; // False kao signal da je str prvi put ucitana.
     }
     set room(r) {
         this._room = r;
@@ -33,10 +34,10 @@ export class Chatroom {
         return response;
     }
     getChats(callback) {
-        this.chats.where("room", "==", this.room).orderBy("created_at", "asc").onSnapshot(snapshot => {
+        this.unsub = this.chats.where("room", "==", this.room).orderBy("created_at", "asc").onSnapshot(snapshot => {
             snapshot.docChanges().forEach(change => {
                 if (change.type === "added") {
-                    callback(change.doc.data());
+                    callback(change.doc);
                 }
             })
         })
@@ -46,5 +47,14 @@ export class Chatroom {
     }
     updateRoom(newRoom) {
         this.room = newRoom;
+        // Moze i (this.unsub) isto je.
+        if (this.unsub != false) { // sunsub vise nije false nego je u getChats postalo funkcija
+            this.unsub(); // unsub je sada funkcija i pozivam je sa zagradama
+        }
+    }
+    deleteMsg(id) {
+        this.chats.doc(id).delete().then().catch(err => {
+            console.log("Error:", err);
+        })
     }
 }

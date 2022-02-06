@@ -1,3 +1,5 @@
+import { u } from "./app.js";
+
 export class ChatUI {
     constructor(e) {
         this.element = e;
@@ -28,10 +30,11 @@ export class ChatUI {
             return `${day}.${month}.${year} - ${hour}:${minutes}`
         }
     }
-    templateDiv(data) {
+    templateDiv(doc) {
+        let id = doc.id
+        let data = doc.data();
         let time = data.created_at.toDate();
         let newDiv = document.createElement("div");
-        newDiv.classList.add("textBubble");
         let newP = document.createElement("p");
         let newSpan = document.createElement("span");
         newSpan.innerText = `${data.username}: `;
@@ -41,12 +44,22 @@ export class ChatUI {
         let newP2 = document.createElement("p");
         newP2.innerText = `${this.getTime(time)}`;
         newP2.style.color = "gray";
+        let newImg = document.createElement("img");
+        newImg.src = `Images/bin.png`
+        newImg.classList.add("binImg");
+        newDiv.appendChild(newImg)
         newDiv.appendChild(newP);
         newDiv.appendChild(newP2);
+        newDiv.id = id;
         this.element.appendChild(newDiv);
+        if (u === data.username) {
+            newDiv.classList.add("textBubbleAway");
+        } else {
+            newDiv.classList.add("textBubble");
+        }
     }
     delete() {
-        let pic = `<img src="Images/snowman1.png" alt="">`;
+        let pic = `<img id="snowman" src="Images/snowman1.png" alt="">`
         this.element.innerHTML = pic;
     }
 }
