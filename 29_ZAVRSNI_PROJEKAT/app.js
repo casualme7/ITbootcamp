@@ -9,19 +9,19 @@ let changedUsername = document.querySelector("#changedUsername");
 let usernameInput = document.querySelector(`.username_input input[type="text"]`);
 let update = document.querySelector(".update");
 let headerAll = document.querySelector("section ul");
-let colorInput = document.querySelector(`.color_input input[type="color"]`);
-let colorB = document.querySelector(".colorB");
+let colorB = document.querySelector("#colorB");
 let firstDate = document.querySelector(".firstDate");
 let secondDate = document.querySelector(".secondDate");
 let getDates = document.querySelector(".getDates");
-let goBackSection = document.querySelector(".goBackSection");
-let allForms = document.querySelector(".form_inputs");
+let allLis = document.querySelectorAll("li");
 
 // Sounds and sound control
-let addingSound = new Audio("Sounds/adding.mp3")
+let addingSound = new Audio("Sounds/tick.mp3")
 addingSound.volume = 0.1;
 let removeSound = new Audio("Sounds/removing2.mp3")
 removeSound.volume = 0.1;
+let denied = new Audio("Sounds/denied1.mp3");
+denied.volume = 0.2;
 
 // Objekti klasa / Instance klasa
 let username = "Anonymous";
@@ -64,19 +64,20 @@ let inputInfo = (variable, text, border) => {
 // Dugme send za ispis nove poruke.
 send.addEventListener("click", (r) => {
     r.preventDefault();
-    addingSound.play();
     if (msgInput.value.trim() !== "") {
         inputInfo(msgInput, "Your message", "2px solid black");
         chatroom.addChat(msgInput.value).then(() => {
             msgInput.value = "";
-            console.log("Chat added successfully!");
+            addingSound.play();
         }).catch(err => {
             console.log("ERROR:", err);
         });
     } else {
         inputInfo(msgInput, "Enter a valid message", "2px solid red");
         msgInput.value = "";
+        denied.play();
     }
+    stb(chatRoomArea);
 });
 
 // Small function for username popup
@@ -109,6 +110,12 @@ update.addEventListener("click", (e) => {
 // Klik na dugme da promeni sobu
 headerAll.addEventListener("click", (e) => {
     let dugme = e.target;
+    allLis.forEach(el => {
+        el.style.borderColor = "#ec05d900";
+        el.style.transform = "scale(1)";
+    })
+    dugme.parentElement.style.borderColor = "rgb(70, 70, 70)";
+    dugme.parentElement.style.transform = "scale(1.15)";
     localStorage.setItem("lastRoom", dugme.innerText.slice(1));
     if (dugme.tagName === "A") {
         // 1: Postavi Room value;
@@ -119,6 +126,8 @@ headerAll.addEventListener("click", (e) => {
         chatroom.getChats((d) => {
             chat.templateDiv(d);
         });
+        // 4: Pokazivanje poslednjeg chata funkcija
+        stb(chatRoomArea);
     }
 })
 
@@ -139,11 +148,11 @@ chatRoomArea.addEventListener("click", (del) => {
 })
 
 // Promwna box shadowa Main chat podrucju
-colorB.addEventListener("click", (no) => {
+colorB.addEventListener("change", (no) => {
     no.preventDefault();
     setTimeout(() => {
-        chatRoomArea.style.boxShadow = `0px 0px 15px 4px ${colorInput.value}`;
-        localStorage.setItem("boxShadow", `0px 0px 15px 4px ${colorInput.value}`)
+        chatRoomArea.style.boxShadow = `0px 0px 15px 4px ${colorB.value}`;
+        localStorage.setItem("boxShadow", `0px 0px 15px 4px ${colorB.value}`)
     }, 500)
 })
 
@@ -154,11 +163,23 @@ getDates.addEventListener("click", (gd) => {
     let sSec = second.getTime() / 1000;
     let first = new Date(firstDate.value);
     let fSec = first.getTime() / 1000;
+    chat.delete();
     chatroom.getChats((d) => {
         let time = d.data().created_at;
-        if (fSec < time.seconds && sSec > time.seconds) {
-            chat.delete();
+        if (time.seconds > fSec && time.seconds < sSec) {
             chat.templateDiv(d);
         }
     });
-})
+});
+
+// Funkcija za pomeranje chate an dole
+let stb = (a) => {
+    setTimeout(() => {
+        a.scrollTop = a.scrollHeight;
+    }, 150)
+};
+
+// Izvrsena funkcija za 100ms zbog delaya brosera
+setTimeout(() => {
+    stb(chatRoomArea);
+}, 100)
