@@ -176,7 +176,7 @@ getDates.addEventListener("click", (gd) => {
 let stb = (a) => {
     setTimeout(() => {
         a.scrollTop = a.scrollHeight;
-    }, 150)
+    }, 200)
 };
 
 // Izvrsena funkcija za 100ms zbog delaya brosera
