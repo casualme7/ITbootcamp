@@ -41,6 +41,7 @@ export class ChatUI {
         newSpan.classList.add("spanBubble");
         newP.appendChild(newSpan);
         newP.innerHTML += ` ${data.message}`;
+        let hr = document.createElement("hr");
         let newP2 = document.createElement("p");
         newP2.innerText = `${this.getTime(time)}`;
         newP2.style.color = "gray";
@@ -49,6 +50,7 @@ export class ChatUI {
         newImg.classList.add("binImg");
         newDiv.appendChild(newImg)
         newDiv.appendChild(newP);
+        newDiv.appendChild(hr);
         newDiv.appendChild(newP2);
         newDiv.id = id;
         this.element.appendChild(newDiv);

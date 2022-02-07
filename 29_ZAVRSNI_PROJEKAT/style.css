@@ -160,9 +160,9 @@ input[type="text"]{
     position: relative;
 }
 
-/* .chat_room_text::-webkit-scrollbar {
+.chat_room_text::-webkit-scrollbar {
     display: none;
-} */
+}
 
 #colorB {
     position: absolute;
@@ -178,6 +178,11 @@ input[type="text"]{
 /* Fix za textarea nije allined*/
 .date_input .getDates {
     margin-bottom: 6px;
+}
+
+hr {
+    height: 2px;
+    background-color: whitesmoke;
 }
 
 /* Fix za color  sto nije allined */
