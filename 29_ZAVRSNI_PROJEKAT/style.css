@@ -214,10 +214,10 @@ position: relative;
     margin: 0px 0px 15px 0px;
     border-radius: 30px;
     border-top-left-radius: 0px;
-    box-shadow: 0px 0px 4px rgb(173, 0, 173);
+    box-shadow: 0px 0px 6px rgb(173, 0, 173);
     background: radial-gradient(circle, 
     rgba(0,69,255,0.15) 0%, 
-    rgba(187,0,241,0.15) 100%);
+    rgba(187,0,241,0.20) 100%);
     transition: 500ms;
 }
 
@@ -227,11 +227,11 @@ position: relative;
     margin: 0px 0px 15px auto;
     padding: 7px 50px 7px 25px;
     border-radius: 30px;
-    box-shadow: 0px 0px 4px rgb(0, 68, 255);
+    box-shadow: 0px 0px 6px rgb(0, 68, 255);
     border-top-right-radius: 0px;
     background: radial-gradient(circle, 
-    rgba(0,69,255,0.15) 0%, 
-    rgba(187,0,241,0.15) 100%);
+    rgba(187,0,241,0.15) 0%,
+    rgba(0,69,255,0.20) 100%);
     transition: 500ms;
 }
 

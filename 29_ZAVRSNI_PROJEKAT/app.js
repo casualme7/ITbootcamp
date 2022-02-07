@@ -17,11 +17,11 @@ let allLis = document.querySelectorAll("li");
 
 // Sounds and sound control
 let addingSound = new Audio("Sounds/tick.mp3")
-addingSound.volume = 0.1;
+addingSound.volume = 0.5;
 let removeSound = new Audio("Sounds/removing2.mp3")
-removeSound.volume = 0.1;
+removeSound.volume = 0.5;
 let denied = new Audio("Sounds/denied1.mp3");
-denied.volume = 0.2;
+denied.volume = 0.5;
 
 // Objekti klasa / Instance klasa
 let username = "Anonymous";
