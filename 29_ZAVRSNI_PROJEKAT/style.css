@@ -120,6 +120,16 @@ input {
     border: 2px solid black;
     border-radius: 10px;
     box-shadow: 0px 0px 10px black;
+    transition: 600ms;
+}
+
+textarea {
+    transition: 600ms;
+}
+
+input:hover,
+textarea:hover {
+    border: 2px solid rgb(202, 202, 202);
 }
 
 input[type="datetime-local"] {
@@ -157,6 +167,7 @@ input[type="text"]{
     text-shadow: 3px 3px 3px #000000;
     transition: 500ms;
     margin-bottom: 15px;
+    cursor: pointer;
 }
 
 .chat_room_area {
@@ -184,7 +195,7 @@ input[type="text"]{
 
 #colorB {
     position: absolute;
-    bottom: -33px;
+    bottom: -28px;
     left: 25px;
     width: 30px;
     height: 30px;
@@ -305,7 +316,7 @@ position: relative;
 .social {
     position: fixed;
     right: 5px;
-    bottom: 40%;
+    bottom: 45%;
     text-align: center;
     padding: 0 20px;
 }

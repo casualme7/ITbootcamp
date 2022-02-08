@@ -110,14 +110,15 @@ update.addEventListener("click", (e) => {
 // Klik na dugme da promeni sobu
 headerAll.addEventListener("click", (e) => {
     let dugme = e.target;
-    allLis.forEach(el => {
-        el.style.borderColor = "#ec05d900";
-        el.style.transform = "scale(1)";
-    })
-    dugme.parentElement.style.borderColor = "rgb(70, 70, 70)";
-    dugme.parentElement.style.transform = "scale(1.15)";
     localStorage.setItem("lastRoom", dugme.innerText.slice(1));
     if (dugme.tagName === "A") {
+        // 0:
+        allLis.forEach(el => {
+            el.style.borderColor = "#ec05d900";
+            el.style.transform = "scale(1)";
+        })
+        dugme.parentElement.style.borderColor = "rgb(70, 70, 70)";
+        dugme.parentElement.style.transform = "scale(1.15)";
         // 1: Postavi Room value;
         chatroom.updateRoom(dugme.innerText.slice(1));
         // 2: Brisi HTML.
@@ -160,16 +161,19 @@ colorB.addEventListener("change", (no) => {
 getDates.addEventListener("click", (gd) => {
     gd.preventDefault();
     let second = new Date(secondDate.value);
-    let sSec = second.getTime() / 1000;
+    let secondSeconds = second.getTime() / 1000;
     let first = new Date(firstDate.value);
-    let fSec = first.getTime() / 1000;
-    chat.delete();
-    chatroom.getChats((d) => {
-        let time = d.data().created_at;
-        if (time.seconds > fSec && time.seconds < sSec) {
-            chat.templateDiv(d);
-        }
-    });
+    let firstSeconds = first.getTime() / 1000;
+    if (firstSeconds && secondSeconds) {
+        chat.delete();
+        chatroom.getChats((d) => {
+            let time = d.data().created_at;
+            if (time.seconds > firstSeconds && time.seconds < secondSeconds) {
+                chat.templateDiv(d);
+            }
+        });
+        stb(chatRoomArea);
+    }
 });
 
 // Funkcija za pomeranje chate an dole
@@ -183,3 +187,7 @@ let stb = (a) => {
 setTimeout(() => {
     stb(chatRoomArea);
 }, 100)
+
+for (let i = 0; i < 15; i++) {
+    chatroom.addChat(i);
+}
